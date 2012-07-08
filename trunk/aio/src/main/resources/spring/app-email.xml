@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	default-lazy-init="true">
+	
+<!--	<bean id="freeMarker"-->
+<!--		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">-->
+<!--		<property name="templateLoaderPath" value="classpath:mail" />指定模板文件目录-->
+<!--		<property name="freemarkerSettings"> 设置FreeMarker环境属性-->
+<!--			<props>-->
+<!--				<prop key="template_update_delay">1800</prop>刷新模板的周期，单位为秒-->
+<!--				<prop key="default_encoding">UTF-8</prop>模板的编码格式 -->
+<!--				<prop key="locale">zh_CN</prop> 本地化设置-->
+<!--			</props>-->
+<!--		</property>-->
+<!--	</bean>-->
+
+<!-- 	  <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"> -->
+<!--         <property name="host" value="smtp.sina.com" /> -->
+<!--         <property name="port" value="25" /> -->
+<!--         <property name="username" value="javalihan" /> -->
+<!--         <property name="password" value="javame" /> -->
+<!--         <property name="javaMailProperties"> -->
+<!--          	<props> -->
+<!--          		<prop key="mail.smtp.auth">true</prop> -->
+<!--          		<prop key="mail.smtp.timeout">25000</prop> -->
+<!--          	</props> -->
+<!--         </property> -->
+<!--     </bean> -->
+    
+<!--     <bean id="springMail" class="com.eshe.shop.common.mail.SpringMail">   -->
+<!--         <property name="javaMailSender" ref="mailSender"></property>   -->
+<!--         <property name="from" value="javalihan@sina.com"></property>   -->
+<!--         <property name="title" value="亿舍网"></property>   -->
+<!--         <property name="templateLocation" value="registerUser.ftl"></property>   -->
+<!--         <property name="freeMarker" ref="freeMarkerConfigurer"></property>   -->
+<!--     </bean> -->
+	
+	<!-- SMTP邮件异步发送 -->
+<!-- 	<bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor"> -->
+		<!-- 核心线程数 -->
+<!-- 		<property name="corePoolSize" value="10" /> -->
+		<!-- 最大线程数 -->
+<!-- 		<property name="maxPoolSize" value="50" /> -->
+		<!-- 最大队列数 -->
+<!-- 		<property name="queueCapacity" value="10000" /> -->
+		<!-- 线程池维护线程所允许的空闲时间 -->
+<!-- 		<property name="keepAliveSeconds" value="60" /> -->
+<!-- 	</bean> -->
+	
+	
+</beans>

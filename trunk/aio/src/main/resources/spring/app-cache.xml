@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd"
+	default-lazy-init="true">
+	<!--缓存-->
+	<!--
+		<bean id="cacheManager"
+		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+	-->
+	<!--		<property name="configLocation">-->
+	<!--			<value>classpath:ehcache-application.xml</value>-->
+	<!--		</property>-->
+	<!--	</bean>-->
+	<!--
+		<bean id="cacheManager"
+		class="cn.navigatexp.common.cache.WebEhCacheManagerFacotryBean">
+	-->
+	<!--		<property name="configLocation">-->
+	<!--			<value>classpath:ehcache-application.xml</value>-->
+	<!--		</property>-->
+	<!--		<property name="diskStoreLocation">-->
+	<!--			<value>/WEB-INF/cache/application</value>-->
+	<!--		</property>-->
+	<!--	</bean>-->
+	<!--	-->
+	<!--	xml配置文件缓存缓存-->
+	<!--
+		<bean id="configCache"
+		class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+	-->
+	<!--		<property name="cacheManager">-->
+	<!--			<ref local="cacheManager"/>-->
+	<!--		</property>-->
+	<!--		<property name="cacheName">-->
+	<!--			<value>cn.navigatexp.common.config</value>-->
+	<!--		</property>-->
+	<!--	</bean>-->
+	<!--	-->
+	<!--
+		<bean id="adminRoleCache"
+		class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+	-->
+	<!--		<property name="cacheManager">-->
+	<!--			<ref local="cacheManager"/>-->
+	<!--		</property>-->
+	<!--		<property name="cacheName">-->
+	<!--			<value>admin.role.cache</value>-->
+	<!--		</property>-->
+	<!--	</bean>-->
+
+<!-- 	<cache:annotation-driven /> -->
+
+<!-- 	<bean id="ehCacheManagerFacotryBean" class="com.eshe.shop.common.cache.SpringEhCacheManagerFacotryBean"> -->
+<!-- 		<property name="configLocation"> -->
+<!-- 			<value>classpath:ehcache-application.xml</value> -->
+<!-- 		</property> -->
+<!-- 		<property name="diskStoreLocation"> -->
+<!-- 			<value>/WEB-INF/cache/application</value> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager"> -->
+<!-- 		<property name="cacheManager"> -->
+<!-- 			<ref bean="ehCacheManagerFacotryBean" /> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+	<!-- ++++++++++++++++++++
+		使用方法：
+			1、	@Resource(name = "getAdminRoleCache")
+				private Ehcache ehcache;
+			2、	在bean中加入<qualifier value="getAdminRoleCache"/>，vaue自定义
+				@Autowired
+				public void setEhcache(@Qualifier("getAdminRoleCache")Ehcache ehcache) {
+					this.ehcache = ehcache;
+				}
+	+++++++++++++++++++++ -->
+<!--	<bean id="getAdminRoleCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">-->
+<!--		<property name="cacheManager">-->
+<!--			<ref local="ehCacheManagerFacotryBean"/>-->
+<!--		</property>-->
+<!--		<property name="cacheName">-->
+<!--			<value>cn.navigatexp.service.impl.AdminServiceImpl#getAdminRoleCache</value>-->
+<!--		</property>-->
+<!--	</bean>-->
+<!--	-->
+<!--	<bean id="getRoleCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">-->
+<!--		<property name="cacheManager">-->
+<!--			<ref local="ehCacheManagerFacotryBean"/>-->
+<!--		</property>-->
+<!--		<property name="cacheName">-->
+<!--			<value>cn.navigatexp.service.impl.AdminServiceImpl#getRoleCache</value>-->
+<!--		</property>-->
+<!--		<qualifier value="getAdminRoleCache"/>-->
+<!--	</bean>-->
+	
+</beans>
